@@ -1,0 +1,160 @@
+/* Add your CSS code here.
+
+For example:
+.example {
+    color: red;
+}
+
+For brushing up on your CSS knowledge, check out http://www.w3schools.com/css/css_syntax.asp
+
+End of comment */ 
+
+/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+.breadcrumb-trail, 
+.woocommerce-message {
+    display: none;
+}
+
+.woocommerce-Price-amount {
+	float:right;
+}
+
+.feature-product-section .tg-feature-product-widget .feature-title-wrap a,
+.feature-product-section .tg-feature-product-widget .feature-desc-wrap {
+	color:black;
+	font-size:14px;
+}
+
+.feature-product-section .tg-feature-product-widget .feature-title-wrap {
+	text-transform: uppercase;
+    margin-bottom: 10px;
+	color: #910d08;
+}
+
+.feature-product-section .tg-feature-product-layout-2 .tg-container .tg-column-wrapper .tg-feature-product-widget .featured-image-desc {
+	background:rgba(220,220,220,0.7);
+}
+
+.feature-product-section .tg-feature-product-widget .featured-image-desc::before,
+.fa-plus {
+	display:none;
+}
+
+.feature-product-section .tg-feature-product-widget .feature-price-wrap {
+	text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+    color: #910d08;
+	font-size: 20px;
+}
+
+#pg-5-2 > .panel-row-style, #pg-5-5 > .panel-row-style {
+    padding: 40px 0;
+}
+
+.hrf-title.open-faq span {
+    display: none !important;
+}
+
+.hrf-content,
+h3.hrf-title {
+	padding-left: 10px !important;
+}
+
+.hrf-title.close-faq {
+    cursor: default !important;
+}
+
+.add_to_cart_inline .woocommerce-Price-amount {
+	display: none;
+}
+
+.add_to_cart_inline {
+	border: none !important;
+	padding: 0 !important;
+	text-align: center;
+}
+
+.xoo-cp-atc-icon {
+	display: none !important;
+}
+
+input[type="tel"] {
+    color: #666;
+  	border: 1px solid #ccc;
+  	padding: 3px 6px;
+  	height: 36px;
+  	-webkit-border-radius: 0px;
+}
+
+.woocommerce ul.order_details li.woocommerce-order-overview__order strong {
+  color: #910d08;
+}
+
+.woocommerce .wc-bacs-bank-details-account-name {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+td.xoo-cp-pprice {
+    width: 30%;
+}
+
+.xoo-cp-container {
+    text-align: center !important;
+}
+
+.header-bottom .widget_shopping_cart {
+	overflow-y: scroll;
+	max-height: 600px; 
+}
+
+.woocommerce table.shop_table_responsive tr td, .woocommerce-page table.shop_table_responsive tr td {
+    height: 40px;
+}
+
+.product-subtotal span {
+  font-weight: bold;
+}
+
+td.actions {
+  height: 48px !important;
+}
+
+.woocommerce table.shop_table td {
+    padding: 9px 12px !important;
+}
+
+tr.shipping td {
+  text-align: right;
+}
+
+.xoo-cp-pdetails {
+    display: inline;
+}
+
+/* Responsive CSS */
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  	table.xoo-cp-pdetails tr {
+        text-align: center;
+    }
+  
+  	.xoo-cp-pdetails td {
+  		display: table-row;
+  	}
+  
+  	.xoo-cp-pprice span.woocommerce-Price-amount {
+    	float: none;
+  	}
+}
+
+@media only screen and (max-width:767px) {
+	td.product-remove {
+      background-color: #CCC !important;
+  }
+}
