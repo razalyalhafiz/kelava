@@ -32,7 +32,7 @@ $output .= '<div class="'.$style.' tg-feature-product-filter-layout">';
 $output .= '<div class="tg-container">';
 
 if ($filter && !$categories) {
-	$terms = get_terms( 'portfolio_cat' );
+	$terms = get_terms( 'product_cat' );
 
 	// Filter
 	$output .= '<div class="button-group filters-button-group">';
@@ -47,7 +47,7 @@ if ($filter && !$categories) {
 }
 
 if( $categories == '0' ){
-	$terms          = get_terms( 'portfolio_cat' );
+	$terms          = get_terms( 'product_cat' );
 	$included_terms = wp_list_pluck( $terms, 'term_id' );
 } else {
 	$included_terms = $categories;
@@ -59,11 +59,11 @@ $output .= '<div class="tg-column-wrapper">';
 
 $project_query = new WP_Query(
 	array (
-		'post_type'      => 'portfolio',
+		'post_type'      => 'product',
 		'posts_per_page' => $number,
 		'tax_query' => array(
 	        array(
-	            'taxonomy' => 'portfolio_cat',
+	            'taxonomy' => 'product_cat',
 	            'field'    => 'id',
 	            'terms'    => $included_terms
 	        ),
@@ -71,16 +71,12 @@ $project_query = new WP_Query(
 	)
 );
 
-	// echo '<pre>';
-	// print_r($project_query);
-	// echo '</pre>';
-
 while ( $project_query->have_posts() ): $project_query->the_post();
    global $post;
 
    $id          = $post->ID;
    $title       = get_the_title( $post->ID );
-   $termsArray  = get_the_terms( $id, 'portfolio_cat' );
+   $termsArray  = get_the_terms( $id, 'product_cat' );
    $termsString = "";
 
    if ( $termsArray) {
