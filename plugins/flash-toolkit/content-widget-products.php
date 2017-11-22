@@ -94,13 +94,13 @@ while ( $project_query->have_posts() ): $project_query->the_post();
 // 		$output .= '<span><a href="' . get_the_permalink( $post->ID ) . '"><i class="fa fa-plus"></i></a></span>';
 		$output .= '<div class="feature-inner-block">';
         $output .= '<h3 class="feature-title-wrap">' . $title . '</h3>';
-		$output .= '<h4 class="feature-desc-wrap">' . flash_so_pagebuilder_get_the_excerpt( $post ) . '</h4>';
-		$output .= '<h3 class="feature-price-wrap">RM28.00</h3>';
 		
 		// insert add to cart button
 		$title = str_replace( '&#038;', '&', $title );
 		$product = get_wc_product_by_title( $title );
 		if (isset($product)) {
+			$output .= '<h4 class="feature-desc-wrap">' . $product->description . '</h4>';
+			$output .= '<h3 class="feature-price-wrap">RM' . money_format('%i', $product->price) . '</h3>';
 		    $output .= do_shortcode('[add_to_cart id="' . $product->id . '" sku=""]');
 		}
 		
