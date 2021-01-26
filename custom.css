@@ -7,7 +7,7 @@ For example:
 
 For brushing up on your CSS knowledge, check out http://www.w3schools.com/css/css_syntax.asp
 
-End of comment */ 
+End of comment */
 
 /*
 You can add your own CSS here.
@@ -15,146 +15,115 @@ You can add your own CSS here.
 Click the help icon above to learn more.
 */
 
-.breadcrumb-trail, 
-.woocommerce-message {
-    display: none;
+/* -------------- */
+/* Home page			*/
+/* -------------- */
+/* Set background color */
+.site {
+  background-color: #fff !important;
 }
 
-.woocommerce-Price-amount {
-	float:right;
+/* 3-column row for products */
+.tg-column-wrapper {
+  column-gap: 10px;
+  row-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, fit-content(30%));
+  justify-content: center;
 }
 
-.feature-product-section .tg-feature-product-widget .feature-title-wrap a,
-.feature-product-section .tg-feature-product-widget .feature-desc-wrap {
-	color:black;
-	font-size:14px;
+/* set product cell attr */
+.tg-feature-product-widget {
+  left: 0 !important;
+  position: relative !important;
+  top: 0 !important;
+  width: auto !important;
 }
 
-.feature-product-section .tg-feature-product-widget .feature-title-wrap {
-	text-transform: uppercase;
-    margin-bottom: 10px;
-	color: #910d08;
+/* set font size for product title/price  */
+.feature-title-wrap,
+.feature-price-wrap {
+  font-size: 16px !important;
 }
 
-.feature-product-section .tg-feature-product-layout-2 .tg-container .tg-column-wrapper .tg-feature-product-widget .featured-image-desc {
-	background:rgba(220,220,220,0.7);
+/* enable scrolling for product desc  */
+.featured-image-desc {
+  overflow-y: auto;
 }
 
-.feature-product-section .tg-feature-product-widget .featured-image-desc::before,
-.fa-plus {
-	display:none;
+/* reset padding of widget row */
+.panel-row-style {
+  padding: 0 !important;
 }
 
-.feature-product-section .tg-feature-product-widget .feature-price-wrap {
-	text-align: center;
-    text-transform: uppercase;
-    margin-top: 10px;
-    color: #910d08;
-	font-size: 20px;
+/* Align left cart item in cart widget */
+.woocommerce.widget_shopping_cart .cart_list li {
+  text-align: left;
 }
 
-#pg-5-2 > .panel-row-style, #pg-5-5 > .panel-row-style {
-    padding: 40px 0;
+/* Add top padding to clients widget */
+#clients {
+  padding-top: 40px !important;
 }
 
-.hrf-title.open-faq span {
-    display: none !important;
+/* -------------- */
+/* Cart page			*/
+/* -------------- */
+/* Correct table row alignment */
+.woocommerce table.shop_table_responsive tr td,
+.woocommerce-page table.shop_table_responsive tr td {
+  height: 40px;
 }
 
-.hrf-content,
-h3.hrf-title {
-	padding-left: 10px !important;
-}
-
-.hrf-title.close-faq {
-    cursor: default !important;
-}
-
-.add_to_cart_inline .woocommerce-Price-amount {
-	display: none;
-}
-
-.add_to_cart_inline {
-	border: none !important;
-	padding: 0 !important;
-	text-align: center;
-}
-
-.xoo-cp-atc-icon {
-	display: none !important;
-}
-
-input[type="tel"] {
-    color: #666;
-  	border: 1px solid #ccc;
-  	padding: 3px 6px;
-  	height: 36px;
-  	-webkit-border-radius: 0px;
-}
-
-.woocommerce ul.order_details li.woocommerce-order-overview__order strong {
-  color: #910d08;
-}
-
-.woocommerce .wc-bacs-bank-details-account-name {
-    font-weight: normal;
-    font-size: 14px;
-}
-
-td.xoo-cp-pprice {
-    width: 30%;
-}
-
-.xoo-cp-container {
-    text-align: center !important;
-}
-
-.header-bottom .widget_shopping_cart {
-	overflow-y: scroll;
-	max-height: 600px; 
-}
-
-.woocommerce table.shop_table_responsive tr td, .woocommerce-page table.shop_table_responsive tr td {
-    height: 40px;
-}
-
-.product-subtotal span {
-  font-weight: bold;
-}
-
-td.actions {
-  height: 48px !important;
-}
-
-.woocommerce table.shop_table td {
-    padding: 9px 12px !important;
-}
-
-tr.shipping td {
-  text-align: right;
-}
-
-.xoo-cp-pdetails {
-    display: inline;
-}
-
+/* -------------- */
 /* Responsive CSS */
-@media only screen and (min-width: 320px) and (max-width: 479px) {
-  	table.xoo-cp-pdetails tr {
-        text-align: center;
-    }
-  
-  	.xoo-cp-pdetails td {
-  		display: table-row;
-  	}
-  
-  	.xoo-cp-pprice span.woocommerce-Price-amount {
-    	float: none;
-  	}
+/* -------------- */
+@media only screen and (max-width: 480px) {
+  /* 2-column row for products */
+  .tg-column-wrapper {
+    grid-template-columns: repeat(2, auto);
+  }
 }
 
-@media only screen and (max-width:767px) {
-	td.product-remove {
-      background-color: #CCC !important;
+/* 2-column row for product info */
+@media only screen and (max-width: 600px) {
+  #services .panel-row-style {
+    flex-wrap: wrap;
+  }
+
+  #services .panel-grid-cell {
+    flex: 0 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* maintain product info in a row */
+  #services .panel-row-style {
+    flex-direction: row !important;
+  }
+
+  /* color row header cell in cart page */
+  td.product-remove {
+    background-color: #ccc !important;
+  }
+
+  /* hide shipping address in cart page */
+  .woocommerce-shipping-destination {
+    display: none;
+  }
+
+  /* Add top padding to the cart totals header in cart page */
+  .cart-collaterals {
+    padding-top: 40px;
+  }
+
+  /* Increase cell height in cart page */
+  .woocommerce-cart-form .actions {
+    height: 55px !important;
+  }
+
+  /* Add top margin to update cart button in cart page */
+  button[name="update_cart"] {
+    margin-top: 10px !important;
   }
 }
